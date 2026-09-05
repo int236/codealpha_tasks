@@ -1,0 +1,14 @@
+Key Finding — Class Imbalance
+------------------------------
+Accuracy: 71.5% | Best ROC-AUC: Random Forest (0.767)
+
+Dataset is 70% good credit / 30% bad credit.
+
+Random Forest recall on "Not Creditworthy": only 0.28
+-> misses 72% of actual bad-credit applicants, despite
+   decent overall accuracy.
+
+Why: model leans toward the majority class under imbalance.
+Accuracy alone hides this — per-class recall matters more here.
+
+Next step: class_weight="balanced" or SMOTE to fix it.
